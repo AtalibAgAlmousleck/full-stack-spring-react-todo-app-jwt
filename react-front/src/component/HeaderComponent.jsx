@@ -14,42 +14,35 @@ const HeaderComponent = () => {
 
   return (
     <div>
-      <header id="main-header">
-        <nav>
-          <ul>
-            {isAuthenticated && (
-              <li>
-                <a href="/admin">
-                  <NavLink to="/todos">Todos</NavLink>
-                </a>
-              </li>
-            )}
+     <header id="main-header">
+      <nav>
+        <ul>
+          {isAuthenticated && (
+            <li>
+              <NavLink to="/todos">Todos</NavLink>
+            </li>
+          )}
 
-            {isAuthenticated && (
-                <li>
-                {/* <form action="/logout" method="POST">
-                  <button>Logout</button>
-                </form> */}
-                <NavLink to='/login' onClick={handleLogout}>Logout</NavLink>
-              </li>
-            )}
-            
-            {!isAuthenticated && (
-                <li>
-                {/* <a href="/signup">Signup</a> */}
-                <NavLink to='/register'>Register</NavLink>
-              </li>
-            )}
+          {isAuthenticated && (
+            <li>
+              <NavLink to='/login' onClick={handleLogout}>Logout</NavLink>
+            </li>
+          )}
+          
+          {!isAuthenticated && (
+            <li>
+              <NavLink to='/register'>Register</NavLink>
+            </li>
+          )}
 
-            {!isAuthenticated && (
-                <li>
-                {/* <a href="/login">Login</a> */}
-                <NavLink to='/login'>Login</NavLink>
-              </li>
-            )}
-          </ul>
-        </nav>
-      </header>
+          {!isAuthenticated && (
+            <li>
+              <NavLink to='/login'>Login</NavLink>
+            </li>
+          )}
+        </ul>
+      </nav>
+    </header>
     </div>
   );
 };

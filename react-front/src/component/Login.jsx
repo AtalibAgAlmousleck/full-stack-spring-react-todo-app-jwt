@@ -6,7 +6,7 @@ import { loginAPICall, saveLoggedInUser, storeToken } from "../service/AuthServi
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [submitted, setSubmitted] = useState(false);
+
   const navigate = useNavigate();
 
   //handle login
@@ -24,6 +24,7 @@ const Login = () => {
       saveLoggedInUser(username, role);
       //todo: redirect to the welcome page:
       navigate('/todos');
+      console.log(response.data);
 
       window.location.reload();
      }).catch((error) => {
@@ -34,12 +35,13 @@ const Login = () => {
   return (
     <div id="auth-inputs">
       <div className="controls">
+        <form>
         <p>
           <label>Email</label>
           <input
-            type="email"
+            type="text"
             name="name"
-            // className={emailNotValid ? "invalid" : undefined}
+            value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
         </p>
@@ -48,21 +50,22 @@ const Login = () => {
           <input
             type="password"
             name="name"
-            // className={passwordNotValid ? "invalid" : undefined}
+            value={password}
             onChange={(e) =>
               setPassword(e.target.value)
             }
           />
         </p>
-      </div>
-      <div className="actions">
+        <div className="actions">
         <Link className="text-button" to="/register">
           Create a new account
         </Link>
 
-        <button type="submit" className="button" onClick={(e) => handleLoginForm(e)}>
+        <button className="button" onClick={(e) => handleLoginForm(e)}>
           Sign In
         </button>
+      </div>
+        </form>
       </div>
     </div>
   );

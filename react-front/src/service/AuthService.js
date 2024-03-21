@@ -20,6 +20,7 @@ export const saveLoggedInUser = (username, role) => {
 // check if the user is loggedIn
 export const isUserLoggedIn = () => {
   const username = sessionStorage.getItem('authenticatedUser');
+  return username !== null;
 };
 
 // logout the user

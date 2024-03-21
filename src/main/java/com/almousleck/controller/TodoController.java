@@ -14,8 +14,9 @@ import java.util.List;
  * Created by Almousleck on Mar, 2024
  */
 
+@CrossOrigin("*")
 @RestController
-@RequestMapping("/api/todos")
+@RequestMapping("api/todos")
 @RequiredArgsConstructor
 public class TodoController {
 
