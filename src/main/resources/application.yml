@@ -1,0 +1,38 @@
+server:
+  port: 8080
+  error:
+    include-message: always
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/todo_app
+    username: postgres
+    password: Admin
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show_sql: true
+  flyway:
+    baseline-on-migrate: true
+  main:
+    web-application-type: servlet
+#server:
+#  port: 8092
+#spring:
+#  datasource:
+#    url: jdbc:h2:mem:test
+#    driveClassname: org.h2.Driver
+#    username: user
+#    password: ''
+#  h2:
+#    console:
+#      enable: true
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
