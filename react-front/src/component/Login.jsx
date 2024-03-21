@@ -23,7 +23,7 @@ const Login = () => {
       storeToken(token);
       saveLoggedInUser(username, role);
       //todo: redirect to the welcome page:
-      navigate('/register');
+      navigate('/todos');
 
       window.location.reload();
      }).catch((error) => {
@@ -31,22 +31,6 @@ const Login = () => {
      });
   }
 
-  //function handle submit & input changes
-  const handleInputChange = function (identier, value) {
-    if (identier === "email") {
-      setEnteredEmail(value);
-    } else {
-      setEnteredPassword(value);
-    }
-  };
-
-  // validation input
-  const emailNotValid = submitted && !enteredEmail.includes("@");
-  const passwordNotValid = submitted && enteredPassword.trim().length < 6;
-
-  const handleLogin = function () {
-    setSubmitted(true);
-  };
   return (
     <div id="auth-inputs">
       <div className="controls">

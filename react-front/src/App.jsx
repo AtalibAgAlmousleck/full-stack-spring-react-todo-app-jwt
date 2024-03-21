@@ -4,6 +4,7 @@ import Login from './component/Login.jsx';
 import { isUserLoggedIn } from "./service/AuthService.js";
 import ListTodoComponent from "./component/ListTodoComponent.jsx";
 import TodoComponent from "./component/TodoComponent.jsx";
+import HeaderComponent from "./component/HeaderComponent.jsx";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+      <HeaderComponent />
         <Routes>
           {/*http://localhost:8080*/}
           <Route path="/" element={<Login />} />
